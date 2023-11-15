@@ -1,5 +1,7 @@
 import Test.QuickCheck
 import Data.Char
+import DataStructures.Stack.LinearStack
+
 -- Uso de let in
 circArea :: Double -> Double
 circArea r = pi * r^2
@@ -347,3 +349,17 @@ qSort (h:xs) = qSort ys ++ [h] ++ qSort zs
  where
     ys = [x | x <- xs, x < h]
     zs = [x | x <- xs, x >= h]
+
+--Stack
+
+-- Ejemplo uso Stack
+s1 :: Stack Int 
+s1 = push 3 (push 2 (push 1 empty))
+
+size :: Stack a -> Int 
+size s
+ | isEmpty s = 0
+ | otherwise = 1 + size (pop s)
+
+
+-- Axiomas con QuickCheck
