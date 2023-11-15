@@ -33,7 +33,7 @@ public class Tree<T> {
         return size(root);
     }
 
-    public <T> int height(Node<T> node) {
+    public static <T> int height(Node<T> node) {
         if (node == null) {
             return 0;
         }
